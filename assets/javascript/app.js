@@ -4,7 +4,7 @@ var score = 0
 var answerValues = [-2, -1, 1, 2];
 var indexUsed = [];
 var randomNumber;
-var timerTime = 15;
+var timerTime = 30;
 var questionsAnswered = 0;
 var Timer;
 var inputArray = [
@@ -65,7 +65,6 @@ var start = function(){
 	$("#result-description").html("");
 	$("#paragon-score").html("");
 	timerReset();
-	// runTimer();
 	hideInstructions();
 	hideResult();
 	showGame();
@@ -209,7 +208,7 @@ var descriptionArray = [
 "Mara Jade Skywalker was a smuggler, Hand of the Emperor, and later a Jedi Master on the Jedi Council. She was also married to Luke Skywalker.<br><br>Her story goes from one side to the other. In the end, she finally chose the light side, but it was a long journey to that point. She was a very skilled fighter, and also excelled in feats of speed as well as force valor and protection.",
 "Mace Windu was a powerful Jedi Master during the waning days of the Galactic Republic. Second in command of the Jedi Council to Yoda, he is referred to by Anakin Skywalker as one of the most powerful Jedi.<br><br>Occasionally showing signs of a darker side, he used a purple lightsaber to signify this. However, he was a very good fighter, matching or even equaling Palpatine in combat.",
 "Leia Oragana was a Jedi Knight and Princess of Alderaan. While not trained in the ways of the force as early or strictly as Luke, she is still a very potent user of the force.<br><br>While her primary mission and role was one of diplomacy, she still found uses for her force powers often. At one point, she held an exploding Millennium Falcon together long enough for it to land.",
-"Aayla Secura was a Jedi Master. She was skilled at both lightsaber combat and using force powers.<br><br>She was a general during the Clone Wars. She was very well liked by her subordinates. One clone trooper said she personally saw all of them off and called them the bravest soldiers she had ever met. The killed her soon after that.",
+"Aayla Secura was a Jedi Master. She was skilled at both lightsaber combat and using force powers.<br><br>She was a general during the Clone Wars. She was very well liked by her subordinates. One clone trooper said she personally saw all of them off and called them the bravest soldiers she had ever met. They killed her soon after that.",
 "Plo Koon was a Jedi Master on the Jedi Council during the Clone Wars. He was a very skilled pilot and an expert swordsman.<br><br>He was also well known for his calm, serene demeanor. Even in the face of intense pressure, he never cracked and always made wise decisions.",
 "Qui-Gon Jinn was a Jedi Master in the waning days of the Galactic Republic. He was well known for his wisdom and was not a bad duelist either.<br><br>He was a decent fighter, but he did lose to Darth Maul after holding his own for a while. However, his intense knowledge of the force allowed him to keep living as a force ghost after his demise.",
 "Obi-Wan Kenobi was a Jedi Master and member of the Jedi Council during the Galactic Republic. He is known to have trained two of the most powerful Jedi ever as well as led the Republic during the Clone Wars<br><br>He was also a very gifted duelist, having defeated Darth Maul in somewhat lucky circumstances.",
