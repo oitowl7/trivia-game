@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Jedi or Sith?</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="assets/javascript/app.js"></script>
+	
+
+</head>
+
+<body>
+	<br>
+	<br>
+	<!-- Header that will always be shown -->
+	<div class="container jedi-font col-12 text-center">
+		<h1>Are You A Sith or A Jedi? Find out Here!</h1>
+	</div>
+	<br>
+	<br>
+	<br>
+	<!-- div that holds the 3 windows that will hold the instructions, question, and results pages, showing only one at a time and hiding others when not being used -->
+	<div class="main-body container scroll-font">
+		<!-- element 1: instructions -->
+		<div class="row instructions-div">
+			<!-- picture of evil anakin -->
+			<div class="baddie-pic col-lg-3 col-sm-3 col-md-3 col-xs-9 mar-bot-20 container mar-top-70">
+				<img class="bad-ani instruction-image mx-auto d-block" src="assets/images/bad-ani.jpg">
+			</div>
+			<!-- instructions -->
+			<div class="instructions col-lg-6 col-md-6 col-xs-12 mar-bot-20">
+				<h1 class="text-center">Instructions</h1>
+				<h4 class="text-left">
+					The purpose of this quiz is to determine if you are a follower of the dark side of the force or the light side of the force. How passionitely do you follow your beliefs. Are you a bad guy or a good guy? Are you a hero or are you a villian? How powerful are you? Are you a Sith or are you a Jedi?<br><br>
+					Search your feelings and answer these questions as honestly as you can. You will only have about 15 seconds to answer each question so you better hurry. Find out which hero or villian you most resemble.
+				</h4>
+			</div>
+			<!-- picture of good anakin -->
+			<div class="goodie-pic col-lg-3 col-sm-3 col-md-3 col-xs-9 container mar-top-70">
+				<img class="good-ani instruction-image mx-auto d-block" src="assets/images/good-ani.jpg">
+			</div>
+			<div class="try-again row container">
+				<div class="col-5">
+				</div>
+				<div class="col-1">
+					<button class="btn btn-primary btn-lg" onclick="start()">Begin</button>
+				</div>
+			</div>
+		</div>
+		<!-- actual game board -->
+		<div class="game-div container">
+			<div class="row mar-bot-20">
+				<!-- 1 empty columns -->
+				<div class="col-1">
+				</div>
+				<!-- timer counting down to zero -->
+				<div class="timer-class col-6">
+					<h4><p>You have <span id="timer"></span> seconds to answer</p></h4>
+				</div>
+			</div>
+			<!-- Question and answer area -->
+			<div class="row mar-bot-20">
+				<!-- 1 empty column -->
+				<div class="col-1 ">
+				</div>
+				<!-- Where the question is asked -->
+				<div class="col-10 col-xs-12 question-class">
+					<h2><p id="question">This is the question</p></h2>
+				</div>
+			</div>
+			<div class="row container">
+				<!-- 1 empty column -->
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+				</div>
+				<div class="col-lg-11 col-md-11 col-xs-11">
+					<!-- 5 answers -->
+						<div class="answer-1-class mar-bot-10 answers">
+							<h4><span id="answer-1" onclick="answerOne()">This is answer 1</span></h4>
+						</div>
+						<div class="answer-2-class mar-bot-10 answers">
+							<h4><span id="answer-2" onclick="answerTwo()">This is answer 2</span></h4>
+						</div>
+						<div class="answer-3-class mar-bot-10 answers">
+							<h4><span id="answer-3" onclick="answerThree()">This is answer 3</span></h4>
+						</div>
+						<div class="answer-4-class mar-bot-10 answers">
+							<h4><span id="answer-4" onclick="answerFour()">This is answer 4</span></h4>
+						</div>
+						<div class="answer-5-class mar-bot-10 answers">
+							<h4><span id="answer-5" onclick="jarJarFxn()">This is answer 5</span></h4>
+						</div>
+					<!-- </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="results-div container">
+			<div class="row">
+				<!-- centered "results" -->
+				<div class="results text-center col-12 mar-bot-20">
+					<h1>Results</h1>
+				</div>
+			</div>
+			<div class="row container">
+				<!-- Photo and description of the person gotten -->
+				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 conatiner mar-bot-20 text-center">
+					<img src="" alt="results" class="result-image mx-auto d-block" id="result-img">
+				</div>
+				<div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 container result-description-class mar-bot-20 mar-left-20">
+					<h3><span id="result-description"></span></h3>
+				</div>
+			</div>
+			<div class="final score row container">
+				<!-- 1 empty row -->
+				<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1">
+				</div>
+				<!-- final result -->
+				<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 mar-bot-10">
+					<h1><p id="paragon-score" class="jedi-font text-center"></p></h1>
+				</div>
+			</div>
+			<div class="try-again row container">
+				<div class="col-5">
+				</div>
+				<div class="col-1">
+					<button class="btn btn-danger btn-lg" onclick="start()">Try Again</button>
+				</div>
+			</div>
+		</div>
+	</div>
+<br><br><br><br>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+</html>

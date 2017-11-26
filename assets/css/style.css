@@ -1,0 +1,90 @@
+/*@font-face {
+	font-family: starwars;
+	src: url(../fonts/Starjedi.ttf) format(ttf);
+}*/
+
+@font-face {
+    font-family: 'star_jediregular';
+    src: url('../fonts/starjedi-webfont.woff2') format('woff2'),
+         url('../fonts/starjedi-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+	background-color: #FACE13;
+	background-image: url(../images/background.jpg);
+	color: #FACE13;
+}
+.jedi-font{
+	font-family: 'star_jediregular';
+}
+.scroll-font{
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+.instruction-image{
+	width: 100%;
+	height: auto;
+}
+.mar-bot-20{
+	margin-bottom: 20px;
+}
+.main-body{
+	position: relative;
+}
+/*.instructions-div,
+.game,
+.result{
+	position: absolute;
+	top: 0px;
+}*/
+.mar-top-70{
+	margin-top: 40px;
+}
+.mar-bot-10 {
+	margin-bottom: 10px;
+}
+.answers {
+	margin-left: 20px;
+	cursor: pointer;
+}
+.result-image {
+	width: 100%;
+	height:auto;
+}
+.mar-left-20 {
+	margin-left: 20px;
+}
+.answers:hover {
+	color: red;
+}
+
+
+@media only screen and (max-width: 991px) {
+
+	.result-image {
+		height: 325px;
+		width: auto;
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+	.mar-top-40 {
+		margin-top: 0px;
+	}
+	.instruction-image{
+		height: 150px;
+		width: auto;
+	}
+	.answers {
+		margin-left: 0px;
+	}
+	.result-image {
+	height: 150px;
+	width: auto;
+	}
+}
+
