@@ -65,7 +65,7 @@ var start = function(){
 	$("#result-description").html("");
 	$("#paragon-score").html("");
 	timerReset();
-	runTimer();
+	// runTimer();
 	hideInstructions();
 	hideResult();
 	showGame();
@@ -94,11 +94,6 @@ var undefineScore = function(){
 	return;
 }
 
-var timerReset = function(){
-	timerTime = 15;
-	$("#timer").text(timerTime);
-}
-
 var runTimer = function(){
 	Timer = setInterval(function(){
 		timerTime--
@@ -109,6 +104,13 @@ var runTimer = function(){
 			jarJarFxn();
 		}
 	},1000);
+}
+
+var timerReset = function(){
+	clearInterval(Timer);
+	timerTime = 30;
+	$("#timer").text(timerTime);
+	runTimer();
 }
 
 var stopTimer = function(){
@@ -229,7 +231,7 @@ var descriptionArray = [
 "You are a young, angry, Han Solo killer",
 "You are an enigma, both light and dark",
 "You are a natural force user, but for which side?",
-"You were once the Emperor's hand, but now you're powerful",
+"You were once the Emperor's hand, but now you're a jedi",
 "You are a powerful Jedi, but one with a darker edge",
 "You are a master diplomat and gifted jedi",
 "You are a skilled Jedi, and a well liked on at that",

@@ -29,11 +29,11 @@
 		<!-- element 1: instructions -->
 		<div class="row instructions-div">
 			<!-- picture of evil anakin -->
-			<div class="baddie-pic col-lg-3 col-sm-3 col-md-3 col-xs-9 mar-bot-20 container mar-top-70">
+			<div class="baddie-pic col-lg-3 col-sm-3 col-md-3 col-sm-9 col-xs-9 mar-bot-20 container mar-top-70">
 				<img class="bad-ani instruction-image mx-auto d-block" src="assets/images/bad-ani.jpg">
 			</div>
 			<!-- instructions -->
-			<div class="instructions col-lg-6 col-md-6 col-xs-12 mar-bot-20">
+			<div class="instructions col-lg-6 col-md-6 col-sm-12 col-xs-12 mar-bot-20">
 				<h1 class="text-center">Instructions</h1>
 				<h4 class="text-left">
 					The purpose of this quiz is to determine if you are a follower of the dark side of the force or the light side of the force. How passionitely do you follow your beliefs. Are you a bad guy or a good guy? Are you a hero or are you a villian? How powerful are you? Are you a Sith or are you a Jedi?<br><br>
@@ -41,14 +41,14 @@
 				</h4>
 			</div>
 			<!-- picture of good anakin -->
-			<div class="goodie-pic col-lg-3 col-sm-3 col-md-3 col-xs-9 container mar-top-70">
+			<div class="goodie-pic col-lg-3 col-sm-3 col-md-3 col-sm-9 col-xs-9 container mar-top-70">
 				<img class="good-ani instruction-image mx-auto d-block" src="assets/images/good-ani.jpg">
 			</div>
 			<div class="try-again row container">
-				<div class="col-5">
+				<div class="col-md-1">
 				</div>
-				<div class="col-1">
-					<button class="btn btn-primary btn-lg" onclick="start()">Begin</button>
+				<div class="col-12">
+					<button class="btn btn-primary btn-lg mx-auto d-block mar-top-20 begin-button" onclick="start()">Start Now</button>
 				</div>
 			</div>
 		</div>
@@ -80,19 +80,19 @@
 				<div class="col-lg-11 col-md-11 col-xs-11">
 					<!-- 5 answers -->
 						<div class="answer-1-class mar-bot-10 answers">
-							<h4><span id="answer-1" onclick="answerOne()">This is answer 1</span></h4>
+							<h4><span id="answer-1" class="answer-hover" onclick="answerOne()">This is answer 1</span></h4>
 						</div>
 						<div class="answer-2-class mar-bot-10 answers">
-							<h4><span id="answer-2" onclick="answerTwo()">This is answer 2</span></h4>
+							<h4><span id="answer-2" class="answer-hover" onclick="answerTwo()">This is answer 2</span></h4>
 						</div>
 						<div class="answer-3-class mar-bot-10 answers">
-							<h4><span id="answer-3" onclick="answerThree()">This is answer 3</span></h4>
+							<h4><span id="answer-3" class="answer-hover" onclick="answerThree()">This is answer 3</span></h4>
 						</div>
 						<div class="answer-4-class mar-bot-10 answers">
-							<h4><span id="answer-4" onclick="answerFour()">This is answer 4</span></h4>
+							<h4><span id="answer-4" class="answer-hover" onclick="answerFour()">This is answer 4</span></h4>
 						</div>
 						<div class="answer-5-class mar-bot-10 answers">
-							<h4><span id="answer-5" onclick="jarJarFxn()">This is answer 5</span></h4>
+							<h4><span id="answer-5" class="answer-hover" onclick="jarJarFxn()">This is answer 5</span></h4>
 						</div>
 					<!-- </div> -->
 				</div>
@@ -108,7 +108,7 @@
 			</div>
 			<div class="row container">
 				<!-- Photo and description of the person gotten -->
-				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 conatiner mar-bot-20 text-center">
+				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 conatiner mar-bot-20 text-center">
 					<!-- why isn't photo centering at md and sm sizes but is at xs??? -->
 					<img src="" alt="results" class="result-image mx-auto d-block" id="result-img">
 				</div>
@@ -128,10 +128,10 @@
 			</div>
 			<!-- try again...runs the start fxn -->
 			<div class="try-again row container">
-				<div class="col-5">
-				</div>
-				<div class="col-1">
-					<button class="btn btn-danger btn-lg" onclick="start()">Try Again</button>
+				<!-- <div class="col-5">
+				</div> -->
+				<div class="col-12">
+					<button class="btn btn-danger btn-lg mx-auto d-block" onclick="start()">Try Again</button>
 				</div>
 			</div>
 		</div>

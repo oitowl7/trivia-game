@@ -44,10 +44,12 @@ body {
 .mar-left-20 {
 	margin-left: 20px;
 }
-.answers:hover {
+.answer-hover:hover {
 	color: red;
 }
-
+.begin-button {
+	margin:auto;
+}
 
 @media only screen and (max-width: 991px) {
 
@@ -67,10 +69,15 @@ body {
 	}
 	.answers {
 		margin-left: 0px;
+		margin-bottom: 20px;
 	}
 	.result-image {
 	height: 150px;
 	width: auto;
+	}
+	.begin-button {
+		margin: auto;
+		margin-top: 20px;
 	}
 }
 
