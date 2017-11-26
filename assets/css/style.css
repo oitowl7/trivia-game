@@ -35,7 +35,6 @@ body {
 }
 .answers {
 	margin-left: 20px;
-	cursor: pointer;
 }
 .result-image {
 	width: 100%;
@@ -46,6 +45,7 @@ body {
 }
 .answer-hover:hover {
 	color: red;
+	cursor: pointer;
 }
 .begin-button {
 	margin:auto;
