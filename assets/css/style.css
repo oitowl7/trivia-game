@@ -1,8 +1,3 @@
-/*@font-face {
-	font-family: starwars;
-	src: url(../fonts/Starjedi.ttf) format(ttf);
-}*/
-
 @font-face {
     font-family: 'star_jediregular';
     src: url('../fonts/starjedi-webfont.woff2') format('woff2'),
@@ -11,7 +6,6 @@
     font-style: normal;
 
 }
-
 body {
 	background-color: #FACE13;
 	background-image: url(../images/background.jpg);
@@ -23,7 +17,6 @@ body {
 .scroll-font{
 	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
-
 .instruction-image{
 	width: 100%;
 	height: auto;
@@ -34,12 +27,6 @@ body {
 .main-body{
 	position: relative;
 }
-/*.instructions-div,
-.game,
-.result{
-	position: absolute;
-	top: 0px;
-}*/
 .mar-top-70{
 	margin-top: 40px;
 }
@@ -70,7 +57,6 @@ body {
 	}
 
 }
-
 @media only screen and (max-width: 768px) {
 	.mar-top-40 {
 		margin-top: 0px;

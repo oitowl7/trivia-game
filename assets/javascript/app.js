@@ -57,7 +57,6 @@ $(document).ready(function() {
 	score = undefineScore();
 });
 
-
 var start = function(){
 	questionsAnswered = 0;
 	score = undefineScore();
@@ -70,9 +69,7 @@ var start = function(){
 	hideInstructions();
 	hideResult();
 	showGame();
-
 	gameDisplay();
-	
 }
 
 var hideInstructions = function(){
@@ -244,7 +241,6 @@ var descriptionArray = [
 "You are literally the worst"
  ]
 
-
 var results = function(){
 	hideGame();
 	hideInstructions();
@@ -259,17 +255,3 @@ var results = function(){
 	$("#paragon-score").html(paragonArray[21]);
 	}
 }
-
-
-
-//Math.floor(Math.random() * ("number of possible values") + "starting value")
-
-
-
-
-
-
-
-
-
-
