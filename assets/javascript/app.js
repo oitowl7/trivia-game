@@ -245,7 +245,8 @@ var results = function(){
 	hideGame();
 	hideInstructions();
 	showResult();
-	if (score){
+	console.log(score);
+	if (score !== undefined){
 	$("#result-img").attr('src', 'assets/images/' + score + '.jpg');
 	$("#result-description").html(descriptionArray[score + 10]);
 	$("#paragon-score").html(paragonArray[score + 10]);

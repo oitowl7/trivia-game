@@ -1,3 +1,3 @@
 # trivia-game
 
-last version pushed: 1.01
+last version pushed: 1.02
