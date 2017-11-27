@@ -233,7 +233,7 @@ var descriptionArray = [
 "You were once the Emperor's hand, but now you're a jedi",
 "You are a powerful Jedi, but one with a darker edge",
 "You are a master diplomat and gifted jedi",
-"You are a skilled Jedi, and a well liked on at that",
+"You are a skilled Jedi, and a well liked one at that",
 "You are a calm fighter in the air and on the ground",
 "You are one of the wisest Jedi of all",
 "You have the high ground",
