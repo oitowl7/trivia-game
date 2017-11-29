@@ -1,52 +1,64 @@
-
-// $(".game").hide();
 var score = 0
-var answerValues = [-2, -1, 1, 2];
+var randomNumber = 0;
+var randomAnswerNumber = 0;
 var indexUsed = [];
-var randomNumber;
+var randomWeights = [];
 var timerTime = 30;
 var questionsAnswered = 0;
 var Timer;
+var weights = [-2, -1, 1, 2, 0]
+var jarJarBoolean = false;
 var inputArray = [
 	{
 		question: "Describe your father/mentor",
-		answer1: "1.) He could save others from death...but not himself. Ironic.",
-		answer2: "2.) I didn't have a father. I was conceived by the force.",
-		answer3: "3.) My mentor/boss is a giant worm.",
-		answer4: "4.) He has a very particular set of skills that make him a nightmare.",
-		answer5: "5.) Ooh mooey mooey I love you! ",
+		answers: [
+			"1.) He could save others from death...but not himself. Ironic.",
+			"2.) I didn't have a father. I was conceived by the force.",
+			"3.) My mentor/boss is a giant worm.",
+			"4.) He has a very particular set of skills that make him a nightmare.",
+			"5.) Ooh mooey mooey I love you! ",
+		]
 	},
 	{
 		question: "What is your eye color?",
-		answer1: "1.) Deep yellow/orange.",
-		answer2: "2.) Bright yellow...sometimes covered up by a scary black helmet.",
-		answer3: "3.) Blueish",
-		answer4: "4.) Green. Literally my whole body is green.",
-		answer5: "5.) Oh, maxi big da Force...",
+		answers: [
+			"1.) Deep yellow/orange.",
+			"2.) Bright yellow...sometimes covered up by a scary black helmet.",
+			"3.) Blueish",
+			"4.) Green. Literally my whole body is green.",
+			"5.) Oh, maxi big da Force...",
+		]
+		
 	},
 	{
 		question: "What is your ideal lightsaber?",
-		answer1: "1.) Elegant with a deep red blade.",
-		answer2: "2.) Double bladed red saberstaff...complete with cool ninja moves.",
-		answer3: "3.) Purple...sitting on the fence between light and dark.",
-		answer4: "4.) Good ol' blue or green.",
-		answer5: "5.) Uh-oh! Biiiiiig Goober fish!",
+		answers: [
+			"1.) Elegant with a deep red blade.",
+			"2.) Double bladed red saberstaff...complete with cool ninja moves.",
+			"3.) Purple...sitting on the fence between light and dark.",
+			"4.) Good ol' blue or green.",
+			"5.) Uh-oh! Biiiiiig Goober fish!",
+		]
 	},
 	{
 		question: "What is your ideal complexion?",
-		answer1: "1.) White skin that gets wrinkly when I accidentally zap it.",
-		answer2: "2.) I would rather cover myself in tattoos so you can't see my true complexion.",
-		answer3: "3.) Black skin with a shaved head.",
-		answer4: "4.) I always wanted to be green.",
-		answer5: "5.) Icky, icky goo!",
+		answers: [
+			"1.) White skin that gets wrinkly when I accidentally zap it.",
+			"2.) I would rather cover myself in tattoos so you can't see my true complexion.",
+			"3.) Black skin with a shaved head.",
+			"4.) I always wanted to be green.",
+			"5.) Icky, icky goo!",
+		]
 	},
 	{
 		question: "Which one of these seem like something you would say in difficult situation?",
-		answer1: "1.) And we shall have...peace",
-		answer2: "2.) This technological terror is nothing compared to the force.",
-		answer3: "3.) He is too dangerous to be kept alive.",
-		answer4: "4.) Do. Or do not. There is no try.",
-		answer5: "5.) Wesa got a grand army. That's why you no liking us meesa thinks.",
+		answers: [
+			"1.) And we shall have...peace",
+			"2.) This technological terror is nothing compared to the force.",
+			"3.) He is too dangerous to be kept alive.",
+			"4.) Do. Or do not. There is no try.",
+			"5.) Wesa got a grand army. That's why you no liking us meesa thinks.",
+		]
 	}
 ];
 
@@ -54,12 +66,12 @@ $(document).ready(function() {
 	hideGame();
 	hideResult();
 	showInstructions();
-	score = undefineScore();
+	score = 0;
 });
 
 var start = function(){
 	questionsAnswered = 0;
-	score = undefineScore();
+	score = 0;
 	indexUsed = [];
 	$("#result-img").attr('src', '');
 	$("#result-description").html("");
@@ -89,9 +101,6 @@ var hideResult = function(){
 var showResult = function(){
 	$(".results-div").show();
 }
-var undefineScore = function(){
-	return;
-}
 
 var runTimer = function(){
 	Timer = setInterval(function(){
@@ -107,7 +116,6 @@ var runTimer = function(){
 
 var timerReset = function(){
 	clearInterval(Timer);
-	timerTime = 30;
 	$("#timer").text(timerTime);
 	runTimer();
 }
@@ -123,61 +131,62 @@ var gameDisplay = function(){
 		rng();
 		nextQuestion();
 	} else{
-	showResult();
+		showResult();
 	}
-}
-
-var nextQuestion = function(){
-	$("#question").text(inputArray[randomNumber].question);
-	$("#answer-1").text(inputArray[randomNumber].answer1);
-	$("#answer-2").text(inputArray[randomNumber].answer2);
-	$("#answer-3").text(inputArray[randomNumber].answer3);
-	$("#answer-4").text(inputArray[randomNumber].answer4);
-	$("#answer-5").text(inputArray[randomNumber].answer5);
 }
 
 var rng = function(){
 	randomNumber = Math.floor(Math.random() * 5);
 	if (indexUsed.indexOf(randomNumber) === -1){
 		indexUsed.push(randomNumber);
-		// console.log(indexUsed);
 	} else {
 		rng();
 		return;
 	}
 }
 
-var answerOne = function(){
-	scoreCheck();
-	score += -2;
+var nextQuestion = function(){
+	randomWeights = [];
+	$("#question").text(inputArray[randomNumber].question);
+	rngAnswer();
+	$("#answer-1").text(inputArray[randomNumber].answers[randomAnswerNumber]);
+	rngAnswer();
+	$("#answer-2").text(inputArray[randomNumber].answers[randomAnswerNumber]);
+	rngAnswer();
+	$("#answer-3").text(inputArray[randomNumber].answers[randomAnswerNumber]);
+	rngAnswer();
+	$("#answer-4").text(inputArray[randomNumber].answers[randomAnswerNumber]);
+	rngAnswer();
+	$("#answer-5").text(inputArray[randomNumber].answers[randomAnswerNumber]);
+}
+
+var rngAnswer = function(){
+	randomAnswerNumber = Math.floor(Math.random() * 5);
+	if (randomWeights.indexOf(weights[randomAnswerNumber]) === -1){
+		randomWeights.push(weights[randomAnswerNumber]);
+	} else {
+		rngAnswer();
+		return;
+	}
+}
+
+var answer = function(selection){
+	scoreCheck(selection);
+	score+= randomWeights[selection];
+	randomWeights = [];
 	questionsAnswered++;
 	gameOverCheck();
 }
-var answerTwo = function(){
-	scoreCheck();
-	score--;
-	questionsAnswered++;
-	gameOverCheck();
-}
-var answerThree = function(){
-	scoreCheck();
-	score++;
-	questionsAnswered++;
-	gameOverCheck();
-}
-var answerFour = function(){
-	scoreCheck();
-	score += 2;
-	questionsAnswered++;
-	gameOverCheck();
-}
+
 var jarJarFxn = function(){
 	questionsAnswered++;
+	randomWeights = [];
 	gameOverCheck();
 }
-var scoreCheck = function(){
-	if (score === undefined){
-		score = 0
+
+var scoreCheck = function(selection){
+	if (jarJarBoolean === false && randomWeights[selection] !== 0){
+			jarJarBoolean = true;
 	}
 }
 
@@ -189,7 +198,6 @@ var gameOverCheck = function(){
 	else{
 		stopTimer();
 		results();
-		// console.log(score);
 	}
 }
 var descriptionArray = [
@@ -246,14 +254,14 @@ var results = function(){
 	hideGame();
 	hideInstructions();
 	showResult();
-	console.log(score);
-	if (score !== undefined){
-	$("#result-img").attr('src', 'assets/images/' + score + '.jpg');
-	$("#result-description").html(descriptionArray[score + 10]);
-	$("#paragon-score").html(paragonArray[score + 10]);
+	// console.log(score);
+	if (jarJarBoolean === false){
+		$("#result-img").attr('src', 'assets/images/jarjar.jpg');
+		$("#result-description").html(descriptionArray[21]);
+		$("#paragon-score").html(paragonArray[21]);
 	} else{
-	$("#result-img").attr('src', 'assets/images/jarjar.jpg');
-	$("#result-description").html(descriptionArray[21]);
-	$("#paragon-score").html(paragonArray[21]);
+		$("#result-img").attr('src', 'assets/images/' + score + '.jpg');
+		$("#result-description").html(descriptionArray[score + 10]);
+		$("#paragon-score").html(paragonArray[score + 10]);
 	}
 }

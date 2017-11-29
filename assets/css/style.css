@@ -72,12 +72,16 @@ body {
 		margin-bottom: 20px;
 	}
 	.result-image {
-	height: 150px;
-	width: auto;
+		height: 150px;
+		width: auto;
 	}
 	.begin-button {
 		margin: auto;
 		margin-top: 20px;
 	}
+/*	.container {
+		padding: 10px;
+		margin: 10px;
+	}*/
 }
 
