@@ -22,7 +22,7 @@ var inputArray = [
 	{
 		question: "What is your eye color?",
 		answers: [
-			"1.) Deep yellow/orange.",
+			"1.) Deep yellow/orange/brownish.",
 			"2.) Bright yellow...sometimes covered up by a scary black helmet.",
 			"3.) Blueish",
 			"4.) Green. Literally my whole body is green.",
@@ -73,6 +73,7 @@ var start = function(){
 	questionsAnswered = 0;
 	score = 0;
 	indexUsed = [];
+	jarJarBoolean = false;
 	$("#result-img").attr('src', '');
 	$("#result-description").html("");
 	$("#paragon-score").html("");
@@ -127,12 +128,8 @@ var stopTimer = function(){
 }
 
 var gameDisplay = function(){
-	if (questionsAnswered < 5){
 		rng();
 		nextQuestion();
-	} else{
-		showResult();
-	}
 }
 
 var rng = function(){
@@ -147,7 +144,6 @@ var rng = function(){
 
 var nextQuestion = function(){
 	randomWeights = [];
-	$("#question").text(inputArray[randomNumber].question);
 	rngAnswer();
 	$("#answer-1").text(inputArray[randomNumber].answers[randomAnswerNumber]);
 	rngAnswer();
