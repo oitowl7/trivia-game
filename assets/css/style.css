@@ -44,11 +44,15 @@ body {
 	margin-left: 20px;
 }
 .answer-hover:hover {
-	color: red;
+	font-weight: bolder;
 	cursor: pointer;
 }
 .begin-button {
 	margin:auto;
+}
+.max-width-1440 {
+	max-width: 1440px;
+	margin: 0 20px 0 20px;
 }
 
 @media only screen and (max-width: 991px) {

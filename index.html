@@ -25,7 +25,7 @@
 	<br>
 	<br>
 	<!-- div that holds the 3 windows that will hold the instructions, question, and results pages, showing only one at a time and hiding others when not being used -->
-	<div class="main-body container scroll-font">
+	<div class="main-body container-fluid scroll-font max-width-1440">
 		<!-- element 1: instructions -->
 		<div class="row instructions-div">
 			<!-- picture of evil anakin -->
@@ -44,9 +44,7 @@
 			<div class="goodie-pic col-lg-3 col-sm-3 col-md-3 col-sm-9 col-xs-9 container mar-top-70">
 				<img class="good-ani instruction-image mx-auto d-block" src="assets/images/good-ani.jpg">
 			</div>
-			<div class="try-again row container">
-				<div class="col-md-1">
-				</div>
+			<div class="try-again container">
 				<div class="col-12">
 					<button class="btn btn-primary btn-lg mx-auto d-block mar-top-20 begin-button" onclick="start()">Start Now</button>
 				</div>
@@ -80,19 +78,19 @@
 				<div class="col-lg-11 col-md-11 col-xs-11">
 					<!-- 5 answers -->
 						<div class="answer-1-class mar-bot-10 answers">
-							<h4><span id="answer-1" class="answer-hover" onclick="answer(0)">This is answer 1</span></h4>
+							<h4 class="answer-hover">1.) <span id="answer-1" onclick="answer(0)">This is answer 1</span></h4>
 						</div>
 						<div class="answer-2-class mar-bot-10 answers">
-							<h4><span id="answer-2" class="answer-hover" onclick="answer(1)">This is answer 2</span></h4>
+							<h4 class="answer-hover">2.) <span id="answer-2" onclick="answer(1)">This is answer 2</span></h4>
 						</div>
 						<div class="answer-3-class mar-bot-10 answers">
-							<h4><span id="answer-3" class="answer-hover" onclick="answer(2)">This is answer 3</span></h4>
+							<h4 class="answer-hover">3.) <span id="answer-3" onclick="answer(2)">This is answer 3</span></h4>
 						</div>
 						<div class="answer-4-class mar-bot-10 answers">
-							<h4><span id="answer-4" class="answer-hover" onclick="answer(3)">This is answer 4</span></h4>
+							<h4 class="answer-hover">4.) <span id="answer-4" onclick="answer(3)">This is answer 4</span></h4>
 						</div>
 						<div class="answer-5-class mar-bot-10 answers">
-							<h4><span id="answer-5" class="answer-hover" onclick="answer(4)">This is answer 5</span></h4>
+							<h4 class="answer-hover">5.) <span id="answer-5" onclick="answer(4)">This is answer 5</span></h4>
 						</div>
 				</div>
 			</div>
@@ -126,7 +124,7 @@
 				</div>
 			</div>
 			<!-- try again...runs the start fxn -->
-			<div class="try-again row container">
+			<div class="try-again container">
 				<!-- <div class="col-5">
 				</div> -->
 				<div class="col-12">

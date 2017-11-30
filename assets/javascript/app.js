@@ -12,52 +12,52 @@ var inputArray = [
 	{
 		question: "Describe your father/mentor",
 		answers: [
-			"1.) He could save others from death...but not himself. Ironic.",
-			"2.) I didn't have a father. I was conceived by the force.",
-			"3.) My mentor/boss is a giant worm.",
-			"4.) He has a very particular set of skills that make him a nightmare.",
-			"5.) Ooh mooey mooey I love you! ",
+			"He could save others from death...but not himself. Ironic.",
+			"I didn't have a father. I was conceived by the force.",
+			"My mentor/boss is a giant worm.",
+			"He has a very particular set of skills that make him a nightmare.",
+			"Ooh mooey mooey I love you! ",
 		]
 	},
 	{
 		question: "What is your eye color?",
 		answers: [
-			"1.) Deep yellow/orange/brownish.",
-			"2.) Bright yellow...sometimes covered up by a scary black helmet.",
-			"3.) Blueish",
-			"4.) Green. Literally my whole body is green.",
-			"5.) Oh, maxi big da Force...",
+			"Deep yellow/orange/brownish.",
+			"Bright yellow...sometimes covered up by a scary black helmet.",
+			"Blueish",
+			"Green. Literally my whole body is green.",
+			"Oh, maxi big da Force...",
 		]
 		
 	},
 	{
 		question: "What is your ideal lightsaber?",
 		answers: [
-			"1.) Elegant with a deep red blade.",
-			"2.) Double bladed red saberstaff...complete with cool ninja moves.",
-			"3.) Purple...sitting on the fence between light and dark.",
-			"4.) Good ol' blue or green.",
-			"5.) Uh-oh! Biiiiiig Goober fish!",
+			"Elegant with a deep red blade.",
+			"Double bladed red saberstaff...complete with cool ninja moves.",
+			"Purple...sitting on the fence between light and dark.",
+			"Good ol' blue or green.",
+			"Uh-oh! Biiiiiig Goober fish!",
 		]
 	},
 	{
 		question: "What is your ideal complexion?",
 		answers: [
-			"1.) White skin that gets wrinkly when I accidentally zap it.",
-			"2.) I would rather cover myself in tattoos so you can't see my true complexion.",
-			"3.) Black skin with a shaved head.",
-			"4.) I always wanted to be green.",
-			"5.) Icky, icky goo!",
+			"White skin that gets wrinkly when I accidentally zap it.",
+			"I would rather cover myself in tattoos so you can't see my true complexion.",
+			"Black skin with a shaved head.",
+			"I always wanted to be green.",
+			"Icky, icky goo!",
 		]
 	},
 	{
 		question: "Which one of these seem like something you would say in difficult situation?",
 		answers: [
-			"1.) And we shall have...peace",
-			"2.) This technological terror is nothing compared to the force.",
-			"3.) He is too dangerous to be kept alive.",
-			"4.) Do. Or do not. There is no try.",
-			"5.) Wesa got a grand army. That's why you no liking us meesa thinks.",
+			"And we shall have...peace",
+			"This technological terror is nothing compared to the force.",
+			"He is too dangerous to be kept alive.",
+			"Do. Or do not. There is no try.",
+			"Wesa got a grand army. That's why you no liking us meesa thinks.",
 		]
 	}
 ];
@@ -117,13 +117,13 @@ var runTimer = function(){
 
 var timerReset = function(){
 	clearInterval(Timer);
+	timerTime = 30;
 	$("#timer").text(timerTime);
 	runTimer();
 }
 
 var stopTimer = function(){
 	clearInterval(Timer);
-	Timer = 0;
 	$("#timer").text(Timer)
 }
 
@@ -144,16 +144,11 @@ var rng = function(){
 
 var nextQuestion = function(){
 	randomWeights = [];
-	rngAnswer();
-	$("#answer-1").text(inputArray[randomNumber].answers[randomAnswerNumber]);
-	rngAnswer();
-	$("#answer-2").text(inputArray[randomNumber].answers[randomAnswerNumber]);
-	rngAnswer();
-	$("#answer-3").text(inputArray[randomNumber].answers[randomAnswerNumber]);
-	rngAnswer();
-	$("#answer-4").text(inputArray[randomNumber].answers[randomAnswerNumber]);
-	rngAnswer();
-	$("#answer-5").text(inputArray[randomNumber].answers[randomAnswerNumber]);
+	$("#question").text(inputArray[randomNumber].question);
+	for (i = 1; i < 6; i++){
+		rngAnswer();
+		$("#answer-"+i).text(inputArray[randomNumber].answers[randomAnswerNumber]);
+	}
 }
 
 var rngAnswer = function(){
