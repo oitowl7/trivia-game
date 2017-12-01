@@ -1,4 +1,4 @@
-var score = 0
+var score = 0;
 var randomNumber = 0;
 var randomAnswerNumber = 0;
 var indexUsed = [];
@@ -6,7 +6,7 @@ var randomWeights = [];
 var timerTime = 30;
 var questionsAnswered = 0;
 var Timer;
-var weights = [-2, -1, 1, 2, 0]
+var weights = [-2, -1, 1, 2, 0];
 var jarJarBoolean = false;
 var inputArray = [
 	{
@@ -105,7 +105,7 @@ var showResult = function(){
 
 var runTimer = function(){
 	Timer = setInterval(function(){
-		timerTime--
+		timerTime--;
 		$("#timer").text(timerTime);
 		if(timerTime === 0){
 			timerReset();
@@ -124,7 +124,7 @@ var timerReset = function(){
 
 var stopTimer = function(){
 	clearInterval(Timer);
-	$("#timer").text(Timer)
+	$("#timer").text(Timer);
 }
 
 var gameDisplay = function(){
